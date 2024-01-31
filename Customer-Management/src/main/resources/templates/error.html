@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+</head>
+<body>
+
+<div id="error-container">
+    <h2>Error</h2>
+    <p id="error-message"></p>
+</div>
+
+<script>
+    // Retrieve error message from query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('message');
+
+    // Display error message
+    const errorMessageElement = document.getElementById('error-message');
+    errorMessageElement.textContent = errorMessage || 'An error occurred.';
+</script>
+
+</body>
+</html>

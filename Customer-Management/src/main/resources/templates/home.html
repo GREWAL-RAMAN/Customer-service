@@ -1,0 +1,61 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="/main.js"></script>
+</head>
+<body onload="getAllCustomers()">
+<h2 id="errorhome">This is home </h2>
+<p id ="delete"></p>
+
+
+
+<div id="customerListContainer" style="display: compact;">
+    <h2>Customer List</h2>
+    <button onclick="SyncCustomer()">Sync</button>
+    <button onclick="goToAdd()">Add</button>
+
+
+    <table id="customerTable"  border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Address</th>
+            <th>Action</th>
+
+        </tr>
+        </thead>
+        <tbody id="customerTableBody">
+        <tr th:each="customer:${list}">
+            <td th:text="${customer.getId()}"></td>
+            <td th:text="${customer.getFirstName()}"></td>
+            <td th:text="${customer.getLastName()}"></td>
+            <td th:text="${customer.getEmail()}"></td>
+            <td th:text="${customer.getPhone()}"></td>
+            <td th:text="${customer.getStreet()}"></td>
+            <td th:text="${customer.getCity()}"></td>
+            <td th:text="${customer.getStreet()}"></td>
+            <td th:text="${customer.getAddress()}"></td>
+            <td> <form>
+                <button>Update</button>
+            </form>
+                <form>
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>
